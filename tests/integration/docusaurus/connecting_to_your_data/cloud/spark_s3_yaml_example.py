@@ -9,6 +9,7 @@ import great_expectations as ge
 
 context = ge.get_context()
 
+# TODO : Change the PandasExecutionEngine back to SparkDFExecutionEngine once the DataConnector is working properly
 datasource_yaml = f"""
 name: my_s3_datasource
 class_name: Datasource
