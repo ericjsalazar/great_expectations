@@ -267,7 +267,7 @@ class PandasDatasource(LegacyDatasource):
 
     @staticmethod
     def guess_reader_method_from_path(path):
-        if path.endswith(".csv") or path.endswith(".tsv"):
+        if path.endswith(".csv") or path.endswith(".tsv") or path.endswith(".txt"):
             return {"reader_method": "read_csv"}
         elif path.endswith(".parquet"):
             return {"reader_method": "read_parquet"}
@@ -279,7 +279,7 @@ class PandasDatasource(LegacyDatasource):
             return {"reader_method": "read_pickle"}
         elif path.endswith(".feather"):
             return {"reader_method": "read_feather"}
-        elif path.endswith(".csv.gz") or path.endswith(".csv.gz"):
+        elif path.endswith(".csv.gz") or path.endswith(".csv.gz") or path.endswith(".txt.gz"):
             return {
                 "reader_method": "read_csv",
                 "reader_options": {"compression": "gzip"},
