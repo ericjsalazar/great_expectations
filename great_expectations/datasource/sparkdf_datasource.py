@@ -249,7 +249,7 @@ class SparkDFDatasource(LegacyDatasource):
 
     @staticmethod
     def guess_reader_method_from_path(path):
-        if path.endswith(".csv") or path.endswith(".tsv"):
+        if path.endswith(".csv") or path.endswith(".tsv") or path.endswith(".txt."):
             return {"reader_method": "csv"}
         elif path.endswith(".parquet"):
             return {"reader_method": "parquet"}
